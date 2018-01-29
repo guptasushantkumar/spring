@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<bean id="loggingAspect" class="com.tima.LoggingAspect"></bean>
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.tima"></context:component-scan>
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+	<aop:config>
+		<aop:pointcut expression="execution(* *.insert(..))" id="pointCut1" />
+		<aop:aspect ref="loggingAspect">
+			<aop:before method="logBefore" pointcut-ref="pointCut1"/>
+			<aop:after-returning method="logAfter" returning="r" pointcut-ref="pointCut1"/>
+		</aop:aspect>
+	</aop:config>
+
+
+</beans>

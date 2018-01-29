@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	<!-- <bean id="e1" class="com.tima.Employee" lazy-init="true"> <property 
+		name="empid" value="12"></property> <property name="fname" value="amit"></property> 
+		<property name="lname" value="deshpande"></property> <property name="addr" 
+		ref="a1"></property> </bean> <bean id="e2" class="com.tima.Employee" lazy-init="true" 
+		p:empid="13" p:fname="sumit" p:lname="deshpande" p:addr-ref="a2" init-method="doInit" 
+		destroy-method="doDestroy" > </bean> <bean id="e3" class="com.tima.Employee" 
+		lazy-init="true" autowire="constructor"> <constructor-arg name="empid" value="13"></constructor-arg> 
+		<constructor-arg name="fname" value="13"></constructor-arg> <constructor-arg 
+		name="lname" value="13"></constructor-arg> <constructor-arg name="addr" value="#{a3}"></constructor-arg> 
+		</bean> <bean id="a1" class="com.tima.Address" lazy-init="true" p:city="Nagpur" 
+		p:street="ITP Road" p:zip="492001"> </bean> <bean id="a2" class="com.tima.Address" 
+		lazy-init="true" p:city="Raipur" p:street="MG Road" p:zip="200491"> </bean> -->
+	<!-- <bean id="a3" class="com.tima.Address" lazy-init="true"> <constructor-arg 
+		name="city" value="Kolhapur" ></constructor-arg> <constructor-arg name="street" 
+		value="KK Road"></constructor-arg> <constructor-arg name="zip" value="492525"></constructor-arg> 
+		</bean> -->
+	<!-- <bean class="com.tima.MybeanPostProcessor"></bean> <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean> 
+		<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean> -->
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.tima"></context:component-scan>
+</beans>
